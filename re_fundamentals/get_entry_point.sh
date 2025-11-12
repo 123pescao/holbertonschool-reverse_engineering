@@ -44,9 +44,9 @@ byte_order="$(
   readelf -h "$file_path" | awk -F: '/Data:/{gsub(/^[ \t]+/,"",$2); print $2}'
 )"
 if grep -qi "little endian" <<<"$byte_order"; then
-  byte_order="Little endian"
+  byte_order="little endian"
 elif grep -qi "big endian" <<<"$byte_order"; then
-  byte_order="Big endian"
+  byte_order="big endian"
 fi
 
 #Entry point line
